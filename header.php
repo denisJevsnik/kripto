@@ -56,12 +56,7 @@
                             href="register.php">Registracija</a></li>';
                         }
                     ?>
-
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="login.php">Prijava</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="register.php">Registracija</a></li>
-                    
+                
                 </ul>
             </div>
         </div>
