@@ -1,5 +1,6 @@
 <?php
 
+    session_start();
     include_once "database.php";
 
     /* Lokalnim var priredimo vrednosti, ki so bile poslane po metodi POST znotraj  <form action="login_check.php" method="post">
@@ -20,27 +21,26 @@
         //Ce ima nosilec poizvedbe en Datensatz
         if($stmt->rowCount() == 1) {
             
-            //echo "tukaj";
             //Ustvrimo lokalnega $usera in mu dolocimo [vrednosti], ki jih vrne fatch() za poizvedbo
             $user = $stmt->fetch();   //$user['first_name'], $user['id'], $user['pass'],... vsi atributi zapisa
             
-            echo "tukaj 1";
             // Ce se geslo po metodi _POST ujema z geslom poizvedbe
             if(password_verify($pass, $user['pass'])) {
-                echo "tukaj 2";
+                
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['admin'] = $user['admin'];
+                $_SESSION['first_name'] = $user['first_name'];
+                $_SESSION['lastt_name'] = $user['last_name'];
+
 
                 //nadaljujemo na strani index.php
-                //echo "geslo je pravilno";
-                //header("Location: index.php");
-                header("Location: login.php");
+                header("Location: index.php");
                 die();
             }
         }
     }
     //drugace se vrnemo na login.php
-    //header("Location: login.php");
-    echo "tukaj";
+    header("Location: login.php");
     die();
 
-    //$stmt->close();
 ?>
