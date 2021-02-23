@@ -15,10 +15,10 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
-                    <form action="cryptocurrency_insert.php" method="post">
+                    <form action="cryptocurrency_insert.php" method="post" enctype="multipart/form-data">
 
                         <div class="control-group">
-                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <div class="form-group floating-label-form-group   mb-0 pb-2">
                                 <label>Ime</label>
                                 <input class="form-control" type="text" name="title" placeholder="Vnasite ime valute" required="required"/> <br/>
                             </div>
