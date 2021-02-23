@@ -8,7 +8,7 @@
 
     <?php
         include_once "database.php";
-        $query = "SELECT * FROM cryptocurrencies"
+        $query = "SELECT * FROM cryptocurrencies";
 
         $stmt = $pdo->prepare($query);
         $stmt->execute();
