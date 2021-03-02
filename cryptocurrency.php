@@ -65,6 +65,34 @@ $crypto = $stmt->fetch();
     </div>
 </div>
 
+<div class="komentarji" id="komentarji">
+    <div class="orazec">
+        <form action="comment_insert.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $crypto['id'];?>" />
+            <textarea name="content" rows="5" cals="25"></textarea> <br/>
+            <input type="submit" value="komentiraj" class="btn btn-primary">
+        </form>
+    </div>
+    <div class="seznam">
+        <?php
+            $query = "SELECT * FROM comments WHERE cryptocurrency_id  = ? ";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$id]);
+
+            while ($row = $stmt->fetch()) {
+                echo '<div class="komentar">';
+                echo '<div class="oseba"> '.getFullName($row['user_id']).' ('.date("j. n. Y G:i", strtotime($row['date_add'])).')</div>';
+                echo '<div class="vsebina">'.$row['content'].'</div>';
+                echo '</div>';
+            }
+        ?>
+
+        
+
+        
+    </div>
+</div>
+
 
 <?php
 include_once "footer.php";
