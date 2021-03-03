@@ -1,7 +1,6 @@
 <?php
-include_once "header.php";
+    include_once "header.php";
 ?>
-
     <!-- Contact Section-->
     <section class="page-section" id="contact">
         <div class="container">
@@ -18,7 +17,6 @@ include_once "header.php";
                 <div class="col-lg-8 mx-auto">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
                     <form action="user_insert.php" method="post">
-
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Ime</label>
@@ -52,13 +50,11 @@ include_once "header.php";
                         <br />
                         <div id="success"></div>
                         <div class="form-group"><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Pošlji</button> </div>
-                        
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
 <?php
-include_once "footer.php";
+    include_once "footer.php";
 ?>

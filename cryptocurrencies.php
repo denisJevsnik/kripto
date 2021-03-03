@@ -1,8 +1,15 @@
 <?php
     include_once "header.php";
 ?>
-    <a href="cryptocurrencies_add.php" class="btn btn-primary">Dodaj valuto</a>
-    </br>
+    <?php
+    // dodajane kriptovalut je omogoceno le administratorju
+    if(admin()) {
+    ?>
+        <a href="cryptocurrencies_add.php" class="btn btn-primary">Dodaj valuto</a>
+        </br>
+    <?php
+    }
+    ?>
 
     <section class="page-section portfolio">
         <div class="container">
@@ -17,28 +24,27 @@
             
             <!-- Portfolio Grid Items-->
             <div class="row justify-content-center">
-            <?php
-                include_once "database.php";
-                $query = "SELECT * FROM cryptocurrencies";
+                <?php
+                    include_once "database.php";
+                    $query = "SELECT * FROM cryptocurrencies";
 
-                $stmt = $pdo->prepare($query);
-                $stmt->execute();
+                    $stmt = $pdo->prepare($query);
+                    $stmt->execute();
 
-                while($row = $stmt->fetch()) {
-                    echo '<div class="col-md-6 col-lg-4 mb-5">';
-                    echo '<div class="portfolio-item mx-auto">';
-                    echo '<a href="cryptocurrency.php?id='.$row['id'].'">';
-                    echo '<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">';
-                    echo '<div class="portfolio-item-caption-content text-center text-white">'.$row['current_price'].'</div>';
-                    echo '</div>';
-                    echo '<img class="img-fluid" src="'.$row['logo'].'" alt="" />';
-                    echo '<h3 class="justify-content-center row align-items-center">'.$row['title'].'</h3>';
-                    echo '</a>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            ?>
-                    
+                    while($row = $stmt->fetch()) {
+                        echo '<div class="col-md-6 col-lg-4 mb-5">';
+                        echo '<div class="portfolio-item mx-auto">';
+                        echo '<a href="cryptocurrency.php?id='.$row['id'].'">';
+                        echo '<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">';
+                        echo '<div class="portfolio-item-caption-content text-center text-white">'.$row['current_price'].'</div>';
+                        echo '</div>';
+                        echo '<img class="img-fluid" src="'.$row['logo'].'" alt="" />';
+                        echo '<h3 class="justify-content-center row align-items-center">'.$row['title'].'</h3>';
+                        echo '</a>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                ?>       
             </div>
         </div>
     </section>

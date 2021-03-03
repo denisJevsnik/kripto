@@ -1,11 +1,11 @@
 <?php
     include_once "header.php";
+    adminOnly();
     include "database.php";
 
     $id = (int) $_GET['id'];
     
     $query = "SELECT * FROM cryptocurrencies WHERE id = ?";
-    
     $stmt = $pdo->prepare($query);
     $stmt->execute([$id]);
     
@@ -69,9 +69,6 @@
         </div>
     </section>
 
-
-
-    
 <?php
     include_once "footer.php";
 ?>

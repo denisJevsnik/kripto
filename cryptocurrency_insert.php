@@ -1,5 +1,6 @@
 <?php
     include_once "session.php";
+    adminOnly();
     include_once "database.php";
 
    /* Lokalnim var priredimo vrednosti, ki so bile poslane po metodi POST znotraj  <form action="user_insert.php" method="post"> na strani register.php

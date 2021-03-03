@@ -1,7 +1,6 @@
 <?php
-include_once "header.php";
+    include_once "header.php";
 ?>
-
     <section class="page-section" id="contact">
         <div class="container">
             <!-- Contact Section Heading-->
@@ -44,5 +43,5 @@ include_once "header.php";
     </section>
 
 <?php
-include_once "footer.php";
+    include_once "footer.php";
 ?>

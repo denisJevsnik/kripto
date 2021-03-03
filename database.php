@@ -1,5 +1,4 @@
 <?php
-
      // dolocimo paramtre povezave
      $host = 'localhost';
      $db   = 'crypto';
@@ -20,5 +19,4 @@
           // ce povezava ne uspe za objekt vrnemo sporocilo in kodo pripadajocega $options
           throw new \PDOException($e->getMessage(), (int)$e->getCode());
      }
-
 ?>
