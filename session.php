@@ -31,10 +31,9 @@
     // ce trenutno prijavljeni ni admin ga preusmeri na index
     function adminOnly() {
         //ce ni nastavljen admin ali ce admin ni enako 1, potem gre na index
-        if(!iset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
+        if(!isset($_SESSION['admin']) || ($_SESSION['admin'] != 1)) {
             header("Location: index.php");
             die();
         }
     }
-
 ?>

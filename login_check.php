@@ -1,5 +1,4 @@
 <?php
-
     session_start();
     include_once "database.php";
 
@@ -42,5 +41,4 @@
     //drugace se vrnemo na login.php
     header("Location: login.php");
     die();
-
 ?>
